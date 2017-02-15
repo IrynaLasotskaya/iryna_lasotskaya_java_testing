@@ -9,8 +9,7 @@ public class Runner {
     private final int size = 20;
     private int[] array = new int[20];
 
-    public Runner() {
-    }
+
 
     public static void main(String[] args) {
         Runner run = new Runner();

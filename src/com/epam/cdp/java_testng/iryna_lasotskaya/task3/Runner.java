@@ -17,26 +17,25 @@ public class Runner {
         System.out.println("Выберите операцию:\n1) + \n2) - \n3) / \n4) * \n");
 
         int action = in.nextInt();
+        Calculator calc1= new Calculator();
         switch (action) {
             case 1:
 
-                Calculator calc1= new Calculator();
                 System.out.println("Результат: " + a + " + " + b + " = " + calc1.sum(a,b));
                 break;
             case 2:
 
-                Calculator calc2 = new Calculator();
-                System.out.println("Результат: " + a + " - " + b + " = " + calc2.sub(a,b));
+                System.out.println("Результат: " + a + " - " + b + " = " + calc1.sub(a,b));
                 break;
             case 3:
-
-                Calculator calc3 = new Calculator();
-                System.out.println("Результат: " + a + " / " + b + " = " + calc3.del(a,b));
+                if (b==0)
+                    System.out.println("Делить на ноль нельзя!Пока!");
+                else
+                System.out.println("Результат: " + a + " / " + b + " = " + calc1.del(a,b));
                 break;
             case 4:
 
-                Calculator calc4 = new Calculator();
-                System.out.println("Результат: " + a + " * " + b + " = " + calc4.mult(a,b));
+                System.out.println("Результат: " + a + " * " + b + " = " + calc1.mult(a,b));
                 break;
             default:
                 System.out.println("Упс!Попробуйте еще раз");

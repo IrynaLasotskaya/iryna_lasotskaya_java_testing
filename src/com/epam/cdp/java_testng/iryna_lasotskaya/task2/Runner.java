@@ -18,7 +18,6 @@ public class Runner {
         String b = in.nextLine();
         maxLength = a.length();
         String theLongest = a;
-        maxLength = b.length();
         theLongest = b;
         minLength = a.length();
         String theShortest = a;

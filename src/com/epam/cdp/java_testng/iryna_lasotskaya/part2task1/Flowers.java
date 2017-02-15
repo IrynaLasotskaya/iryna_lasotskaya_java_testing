@@ -1,5 +1,8 @@
 package com.epam.cdp.java_testng.iryna_lasotskaya.part2task1;
 
+import javax.swing.text.View;
+import java.io.*;
+import java.rmi.RemoteException;
 /**
  * Created by Iryna_Lasotskaya on 08.02.2017.
  */
@@ -25,23 +28,29 @@ public class Flowers implements IFlowers {
     }
 
     public static class Iris extends Flowers {
-        Iris(int price, String name, int quantity) {
-            this.price=price;
-            this.name=name;
-            this.quantity=quantity;
-            summ+=number;
-            number=price*quantity;
+        Iris(int price, String name, int quantity) throws RuntimeException, OutOfMemoryError {
+            try {
+                this.price = price;
+                this.name = name;
+                this.quantity = quantity;
+                summ += number;
+                number = price * quantity;
+            } catch (RuntimeException e) {
+            }
         }
-
     }
 
     public static class Rose extends Flowers {
-        Rose(int price, String name, int quantity) {
-            this.price=price;
-            this.name=name;
-            this.quantity=quantity;
-            summ+=number;
-            number=price*quantity;
+        Rose(int price, String name, int quantity) throws NullPointerException {
+            try {
+                this.price = price;
+                this.name = name;
+                this.quantity = quantity;
+                summ += number;
+                number = price * quantity;
+            } catch (NullPointerException c) {
+                //throw new NullPointerException();
+            }
         }
     }
 
@@ -67,6 +76,23 @@ public class Flowers implements IFlowers {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    public static class Kaktus {
+        Flowers kaktus;
+
+        public void onClick(View view) {
+            if (kaktus == null) {
+                try {
+                    throw new NullPointerException("Кактус не инициализирован");
+                } catch (NullPointerException e) {
+                    System.out.println("catch '" + e + "'");
+                } finally {
+                    System.out.println("finally kaktus is not found");
+
+                }
+            }
+        }
     }
 }
 
