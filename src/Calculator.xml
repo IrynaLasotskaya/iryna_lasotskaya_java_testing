@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="calculator" verbose="1" parallel="methods" thread-count="7">
+    <test name="Calculator test">
+        <parameter name="two" value="2"></parameter>
+        <parameter name="three" value="3"></parameter>
+        <parameter name="expectedForSum" value="5"></parameter>
+        <parameter name="expectedForMult" value="10"></parameter>
+        <parameter name="expectedForDiv" value="2.5"></parameter>
+        <parameter name="expectedForMinus" value="1"/>
+        <parameter name="expectedForDel" value="10"/>
+        <classes>
+            <class name="com.company.Testng2.CalculatorTest"></class>
+        </classes>
+    </test>
+</suite>
