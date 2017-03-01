@@ -11,6 +11,7 @@ class Order implements IOrder {
     public Order(final Flowers flower) {
         this.flower = flower;
     }
+
     enum Currency {
 
         BYN,
@@ -18,10 +19,10 @@ class Order implements IOrder {
         RUR
     }
 
+    @Override
     public void makeOrder(final int numOfFlowers) throws OrderFlowersException {
         final int actualNumberOfFlowers = this.flower.getNumber();
         final String flowerName = this.flower.getName();
-
 
 
         if (actualNumberOfFlowers < numOfFlowers) {
@@ -38,23 +39,24 @@ class Order implements IOrder {
         return numOfRose * this.flower.getPrice();
     }
 
-    public void makeOrderChooseColor (final int colorName) throws OrderFlowersException{
-        final String chooseColor=this.flower.getColor();
-        if (colorName!=1){
-        throw new OrderFlowersException("В магазине нет такого цвета тюльпанов:" + colorName
-        + "" + chooseColor);
-    }
-    else{
-            System.out.printf("Заказ принят:  цвет:%d ",colorName, chooseColor);
+    @Override
+    public void makeOrderChooseColor(final int colorName) throws OrderFlowersException {
+        final String chooseColor = this.flower.getColor();
+        if (colorName != 1) {
+            throw new OrderFlowersException("В магазине нет такого цвета тюльпанов:" + colorName
+                    + "" + chooseColor);
+        } else {
+            System.out.printf("Заказ принят:  цвет:%d ", colorName, chooseColor);
 
         }
-}
-
-public void chooseCountryManufacturer(final int countryName) throws OrderFlowersException{
-final String chooseCountry=this.flower.getCountry();
-if (countryName!=2){
-    throw new OrderFlowersException("Нет такого производителя цветов:" + countryName
-            + "" + chooseCountry);
-}
-}
     }
+
+    @Override
+    public void chooseCountryManufacturer(final int countryName) throws OrderFlowersException {
+        final String chooseCountry = this.flower.getCountry();
+        if (countryName != 2) {
+            throw new OrderFlowersException("Нет такого производителя цветов:" + countryName
+                    + "" + chooseCountry);
+        }
+    }
+}

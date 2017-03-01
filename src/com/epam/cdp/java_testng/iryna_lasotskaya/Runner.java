@@ -1,10 +1,6 @@
 package com.epam.cdp.java_testng.iryna_lasotskaya;
 
-import com.epam.cdp.java_testng.iryna_lasotskaya.osennie.Kaktus;
-import com.epam.cdp.java_testng.iryna_lasotskaya.osennie.Lavender;
-import com.epam.cdp.java_testng.iryna_lasotskaya.osennie.Tulpin;
-import com.epam.cdp.java_testng.iryna_lasotskaya.vesennie.Iris;
-import com.epam.cdp.java_testng.iryna_lasotskaya.vesennie.Rose;
+import com.epam.cdp.java_testng.iryna_lasotskaya.Module2_oop.*;
 
 
 /**
@@ -19,18 +15,18 @@ public class Runner {
         Iris iris = new Iris(4, "Iris", 8, "DarkBlue", "Holland");
         Lavender lavender = new Lavender(2, "Lavender", 3, "Blue", "Holland");
         Kaktus kaktus = new Kaktus();
-        Tulpin tulpin= new Tulpin(2,3,"Tulpin", "red", "Holland");
+        Tulpin tulpin = new Tulpin(2, 3, "Tulpin", "red", "Holland");
         IOrder order = new Order(tulpin);
         //System.out.println("Your bouquet costs " + Flowers.getSumm() + " rub");
 
 
-            try {
-                final int color = consoleView.getColor("Выберите цвет тюльпанов, если красные нажмите 1: ");
-                order.makeOrderChooseColor(color);
-            } catch (final OrderFlowersException ex) {
-                ex.printStackTrace();
-            }
-            consoleView.printMessage("Продолжим оформление заказа");
+        try {
+            final int color = consoleView.getColor("Выберите цвет тюльпанов, если красные нажмите 1: ");
+            order.makeOrderChooseColor(color);
+        } catch (final OrderFlowersException ex) {
+            ex.printStackTrace();
+        }
+        consoleView.printMessage("Продолжим оформление заказа");
 
         try {
             final int country = consoleView.getCountry("Выберите страну производителя, если Голландия нажмите 2: ");
@@ -52,11 +48,11 @@ public class Runner {
             }
 
             consoleView.printMessage("Продолжим оформлени заказа? да/нет");
-        } while(consoleView.repeatOrder());
+        } while (consoleView.repeatOrder());
 
 
-        FileWrite fileWrite=new FileWrite();
-        FileRead fileRead=new FileRead();
+        FileWrite fileWrite = new FileWrite();
+        FileRead fileRead = new FileRead();
 
         System.out.print(fileRead);
     }

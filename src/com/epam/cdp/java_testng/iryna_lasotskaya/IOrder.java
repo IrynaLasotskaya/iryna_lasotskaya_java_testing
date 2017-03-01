@@ -6,10 +6,12 @@ package com.epam.cdp.java_testng.iryna_lasotskaya;
 public interface IOrder {
 
 
-        void makeOrder(final int numOfRose) throws OrderFlowersException;
-        void makeOrderChooseColor(final int chooseColor) throws OrderFlowersException;
-        void chooseCountryManufacturer(final int country) throws OrderFlowersException;
-    }
+    void makeOrder(final int numOfRose) throws OrderFlowersException;
+
+    void makeOrderChooseColor(final int chooseColor) throws OrderFlowersException;
+
+    void chooseCountryManufacturer(final int country) throws OrderFlowersException;
+}
 
 
 
