@@ -9,7 +9,7 @@
         <parameter name="expectedForMinus" value="1"/>
         <parameter name="expectedForDel" value="10"/>
         <classes>
-            <class name="com.company.Testng2.CalculatorTest"></class>
+            <class name="com.epam.cdp.java_testng.iryna_lasotskaya.Module4_oop.CalculatorTest"></class>
         </classes>
     </test>
 </suite>
