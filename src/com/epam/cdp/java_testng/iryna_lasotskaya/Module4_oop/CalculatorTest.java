@@ -1,10 +1,11 @@
 package com.epam.cdp.java_testng.iryna_lasotskaya.Module4_oop;
 
-import org.junit.Assert;
+
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.Date;
+
 
 /**
  * Created by Iryna_Lasotskaya on 21.02.2017.
@@ -16,32 +17,28 @@ public class CalculatorTest extends ConfigurationTest {
     public void testSum() {
         final int expected = 12;
         final long actual = calc.sum(5, 7);
-        Assert.assertEquals("Результат суммирования: ", expected, actual);
-        checkTime();
+        Assert.assertEquals(expected,actual,"Результат суммирования:");
     }
 
     @Test
     public void testSumDouble() {
         final double expected = 4.9;
         final double actual = calc.sum(3.1, 1.8);
-        Assert.assertEquals("Результат суммирования: ", expected, actual);
-        checkTime();
+        Assert.assertEquals(expected, actual, 1,"Результат суммирования десятичных");
     }
 
     @Test
     public void testMult() {
         final int expected = 10;
         final long actual = calc.mult(5, 2);
-        Assert.assertEquals("Результат вычитания", expected, actual);
-        checkTime();
+        Assert.assertEquals(expected, actual, "Результат умножения");
     }
 
     @Test
     public void multTest() {
         final double expected = 7.84;
         final double actual = calc.mult(2.8, 2.8);
-        Assert.assertEquals("Результат вычитания", expected, actual);
-        checkTime();
+        Assert.assertEquals(expected, actual, 1, "Результат умножения десятичных");
     }
 
     @Test(expectedExceptions = NumberFormatException.class)
@@ -50,34 +47,32 @@ public class CalculatorTest extends ConfigurationTest {
     }
 
 
-    @Test()
+    @Test
     public void testSqrt() {
         final double expected = 5;
         final double actual = calc.sqrt(25);
-        Assert.assertEquals("Результат определения корня", expected, actual,1);
-        double a= actual;
-        System.out.println(a);
+        Assert.assertEquals(expected, actual,1, "Результат нахождения корня");
     }
 
-    @Test()
+    @Test
     public void testPositive() {
         final boolean expected = false;
         final boolean actual = calc.isPositive(-1);
-        Assert.assertEquals("Результат определения негативного числа", expected, actual);
+        Assert.assertTrue(expected, "Нахождение позитивного числа");
     }
 
     @Test()
-    public void findNegative() {
+    public void testNegative() {
         final boolean expected = false;
         final boolean actual = calc.isNegative(0);
-        Assert.assertEquals("Результат определения позитивного числа", expected, actual);
+        Assert.assertTrue(expected, "Нахождение негативного числа");
     }
 
     @Test
     public void testSin() {
         final double expected = 0.1;
         final double actual = calc.sin(30);
-        Assert.assertEquals("Результат нахождения синуса 30 гр", expected, actual);
+        Assert.assertEquals( expected, actual, 1, "Результат нахождения синуса");
     }
 
     @Test(expectedExceptions = NumberFormatException.class)
@@ -89,7 +84,7 @@ public class CalculatorTest extends ConfigurationTest {
     public void testCos() {
         final double expected = -1;
         final double actual = calc.cos(180);
-        Assert.assertEquals("Результат вычисления косинуса 180 гр", expected, actual);
+        Assert.assertEquals(expected, actual, 1, "Результат нахождения косинуса");
     }
 
     @Test(expectedExceptions = NumberFormatException.class)
@@ -111,10 +106,6 @@ public class CalculatorTest extends ConfigurationTest {
                 {-1, 1, 0},
                 {1, -10, -9}
         };
-    }
-
-    private void checkTime() {
-        System.out.println("Current time: " + new Date(System.currentTimeMillis()));
     }
 }
 
