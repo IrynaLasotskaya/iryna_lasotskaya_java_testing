@@ -12,13 +12,13 @@ public class ConfigurationTest {
 
     protected Calculator calc;
 
-    @BeforeClass
+    @BeforeClass(groups={"big"})
     public void BeforeClass() {
         System.out.print("Before class is run");
         calc = new Calculator();
     }
 
-    @AfterClass
+    @AfterClass(groups={"big"})
     public void afterClass() {
         System.out.print("After class is run");
     }

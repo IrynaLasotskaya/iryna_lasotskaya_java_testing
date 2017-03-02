@@ -23,12 +23,5 @@ public class Runner {
             add(xmlSuite);
         }});
         testNG.run();
-
-
-
-
-
-
-
     }
 }

@@ -14,6 +14,5 @@ public class MyCustomListener implements ISuiteListener {
 
     @Override
     public void onFinish(ISuite iSuite) {
-
     }
 }
