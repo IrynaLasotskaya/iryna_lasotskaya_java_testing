@@ -19,8 +19,7 @@ public class MainPageFunctions extends BasePage {
     @Override
     public  void signInSecondUser(){
         LoginPage appSignIn= new LoginPage(driver);
-        LoginPage.getInstance(SECONDACCOUNT,PASSWORD);
-        //appSignIn.signIn(SECONDACCOUNT,PASSWORD);
+        appSignIn.signIn(SECONDACCOUNT,PASSWORD);
         appSignIn.signInWithSavingCookie();
     }
     @Override
@@ -50,8 +49,7 @@ public class MainPageFunctions extends BasePage {
         LoginPage appSignIn= new LoginPage(driver);
         appSignIn.openBrowser();
         appSignIn.postButton();
-        LoginPage.getInstance(FIRSTACCOUNT,PASSWORD);
-        //appSignIn.signIn(FIRSTACCOUNT,PASSWORD);
+        appSignIn.signIn(FIRSTACCOUNT,PASSWORD);
         appSignIn.signInWithoutSavingCookie();
     }
 }

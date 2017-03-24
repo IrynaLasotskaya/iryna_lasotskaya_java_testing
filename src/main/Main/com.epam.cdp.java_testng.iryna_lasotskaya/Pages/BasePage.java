@@ -22,7 +22,7 @@ public abstract class BasePage {
     protected void newLetter (){}
     protected void makeLetterSpam(){}
     protected void signInFirstUser(){}
-    protected  void signIn(String username, String password){}
+    public void signIn(String username, String password){}
     protected  void signInWithoutSavingCookie(){}
     protected  void signInWithSavingCookie(){}
     protected  void postButton(){}
