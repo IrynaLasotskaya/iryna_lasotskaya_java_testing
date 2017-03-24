@@ -28,7 +28,7 @@ public class MainPage extends BasePage {
 
     public MainPage(WebDriver driver){this.driver=driver; }
     @Override
-    public void sendLetter (String username, String subject, String body){
+    public void sendLetter (Mail mail){
         driver.findElement(inputSubmitWriteEmailLocator).click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(inputWriteAddressLocator).sendKeys(username);
@@ -64,6 +64,13 @@ public class MainPage extends BasePage {
     @Override
     public Boolean isSpam() {
         return true;
+    }
+
+    final Mail mail= new MailBuilder(){
+        .username("webdriverlasotski@gmail.com")
+        .subject("Hi");
+        .body("Hi");
+        .build();
     }
 
 }

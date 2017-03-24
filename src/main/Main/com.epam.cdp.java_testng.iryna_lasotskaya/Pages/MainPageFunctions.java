@@ -26,7 +26,7 @@ public class MainPageFunctions extends BasePage {
     public void newLetter (){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         MainPage writeLetter=new MainPage(driver);
-        writeLetter.sendLetter(SECONDACCOUNT,SUBJECT,"HI");
+        writeLetter.sendLetter(Mail mail);
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
     }
     @Override
