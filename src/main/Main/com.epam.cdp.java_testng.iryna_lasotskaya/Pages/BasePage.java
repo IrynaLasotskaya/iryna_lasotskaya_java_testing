@@ -12,7 +12,7 @@ public abstract class BasePage {
     private static final String SUBJECT="Hi";
     private WebDriver driver;
     public BasePage(){ }
-    protected void sendLetter (String username, String subject, String body){
+    public void sendLetter (String username, String subject, String body){
 }
     protected void verifyThatLetterInSpam(){
     }

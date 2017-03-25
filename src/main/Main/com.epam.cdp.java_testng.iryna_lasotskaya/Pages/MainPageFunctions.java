@@ -1,7 +1,5 @@
 package Pages;
 
-import Pages.LoginPage;
-import Pages.MainPage;
 import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -26,7 +24,7 @@ public class MainPageFunctions extends BasePage {
     public void newLetter (){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         MainPage writeLetter=new MainPage(driver);
-        writeLetter.sendLetter(Mail mail);
+        writeLetter.sendLetter(SECONDACCOUNT,SUBJECT,SUBJECT);
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
     }
     @Override
